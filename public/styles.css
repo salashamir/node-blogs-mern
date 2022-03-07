@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
+body {
+  background-color: rgb(255, 248, 239);
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: "Josefin Sans", sans-serif;
+  width: 90%;
+}
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #222;
+}
+/* nav and footer styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+nav li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+nav h1 {
+  color: rgb(255, 42, 84);
+  font-size: 2.8em;
+  font-weight: 300;
+}
+nav p,
+nav a {
+  color: #777;
+  font-weight: 400;
+}
+footer {
+  color: #777;
+  text-align: center;
+  margin: 80px auto 20px;
+}
+h2 {
+  margin-bottom: 40px;
+}
+h3 {
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.content {
+  margin-left: 20px;
+}
+/* index styles */
+.blogs a {
+  background-color: #fff;
+  display: block;
+  margin: 40px 0;
+  padding: 20px 30px;
+  border-left: 6px solid rgb(247, 82, 115);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.blogs a h3 {
+  color: #333;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.blogs a:hover h3 {
+  color: crimson;
+}
+
+.blogs a:hover {
+  transform: translateX(5px);
+}
+/* details styles */
+.details {
+  position: relative;
+}
+.delete {
+  color: #eee;
+  background-color: rgb(209, 63, 92);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 15px;
+  padding: 5px 12px;
+  transition: all 0.2s;
+}
+.delete:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.14);
+  background-color: rgb(253, 119, 119);
+}
+/* create styles */
+.create-blog form {
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea {
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  border: 1px solid #999;
+  margin: 10px 0;
+  padding: 8px;
+  font-family: inherit;
+  color: rgb(136, 38, 57);
+}
+.create-blog input:focus,
+.create-blog textarea:focus {
+  outline: none;
+  border: 1px solid rgb(250, 115, 142);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.create-blog label {
+  display: block;
+  margin-top: 24px;
+}
+textarea {
+  height: 120px;
+}
+.create-blog button {
+  margin-top: 20px;
+  background: crimson;
+  color: white;
+  font-family: inherit;
+  border-radius: 5px;
+  padding: 6px;
+  border: 2px solid transparent;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-blog button:hover {
+  border: 2px solid crimson;
+  background: white;
+  color: crimson;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* 404 */
+.not-found {
+  text-align: center;
+  color: rgb(177, 39, 66);
+  font-weight: 300;
+  font-size: 3rem;
+}

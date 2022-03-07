@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="details content">
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p><%= blog.body %></p>
+      </div>
+      <a data-doc="<%= blog._id %>" class="delete">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#fff"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+          />
+        </svg>
+      </a>
+    </div>
+    <!-- front end js will run in browser -->
+    <script>
+      const trashcan = document.querySelector("a.delete");
+      trashcan.addEventListener("click", (e) => {
+        // send delete request to server
+        // store it in const
+        // we access id from data-doc custom attrbiute
+        const endpoint = `/blogs/${trashcan.dataset.doc}`;
+        // send delete request to this endpoint using fetch api
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          // response is json data that comes back to us
+          .then((response) => {
+            return response.json();
+          })
+          // do redirect from front end; data object is one we send from backend passed into res.json on the backend
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>
