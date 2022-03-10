@@ -39,7 +39,7 @@ app.set("view engine", "ejs");
 // set up static files, pass in folder name that will contain all of our static files to be made available to the front end
 app.use(express.static("public"));
 // takes all the url encoded data and pass tat into bjectw e can use on request object
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
 
 // custom middleware to log details to console for every request:
